@@ -1,4 +1,4 @@
-package beakjoon;
+package beakjoon1;
 
 public class Hw_2257 {
 

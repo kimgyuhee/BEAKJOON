@@ -1,4 +1,4 @@
-package beakjoon;
+package beakjoon1;
 
 public class Hw_10718 {
 	public static void main(String[] args) {
