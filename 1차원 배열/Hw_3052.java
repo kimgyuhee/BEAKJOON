@@ -7,6 +7,7 @@ public class Hw_3052 {
 		Scanner s = new Scanner(System.in);
 		int count=0;
 		int[] array = new int[10];
+		int[] rest=new int[42];
 		
 		for(int i=0; i<array.length; i++) {
 			do {
@@ -15,27 +16,19 @@ public class Hw_3052 {
 			array[i]=array[i]%42;
 		}
 		
-		System.out.println("=====42·Î ³ª´«°ª=====");
-		for(int i=0; i<array.length; i++) {
-			System.out.println(array[i]);
+		
+		for(int i=0; i<rest.length; i++) {
+			rest[i]=0;
 		}
 		
-		for(int i=0; i<array.length; i++) {
-			for(int j=0; j<array.length; j++) {
-				if(i==j)
-					continue;
-				if(array[i]==array[j])
-					break;
-				else {
-					if(j==array.length-1)
-						count++;
-					else
-						continue;
-				}
-			}
+		for(int j=0; j<array.length; j++) {
+			rest[array[j]]++;
 		}
 		
-		System.out.println("===============");
+		for(int i=0; i<rest.length; i++) {
+			if(rest[i]!=0)
+				count++;
+		}
 		
 		System.out.println(count);
 		
