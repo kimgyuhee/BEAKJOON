@@ -7,10 +7,13 @@ public class Hw_10870 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n;
+
 		do {
 			n=sc.nextInt();
 		}while(!(n>=0&&n<=20));
-
+		
+		System.out.println(fibo(n));
+		/*******************
 		int fn=0;
 		int f0=0;
 		int f1=1;
@@ -28,6 +31,11 @@ public class Hw_10870 {
 			}
 		}
 		System.out.println(fn);
+		 ********************************/
 	}
-
+	public static int fibo(int n) {
+		if(n==0) return 0;
+		else if(n==1) return 1;
+		else return fibo(n-1)+fibo(n-2); 
+	}
 }
