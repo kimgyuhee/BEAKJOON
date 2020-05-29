@@ -2,28 +2,31 @@ package beakjoon13;
 
 import java.util.Scanner;
 public class Hw_2231 {
-	private static char[] nums;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N=sc.nextInt();
-		String s = Integer.toString(N);
+		int result=0;
+		int sum=0;
 		
-		nums = new char[s.length()];
-		
-		for(int i=0; i<s.length(); i++) {
-			nums[i]=s.charAt(i);
-			System.out.println(nums[i]+"->"+((int)nums[i]-48));
-		}
-		
-		System.out.println(add(N))
-		
-	}
-	
-	public static int add(int n) {
-		if(nums.length==1)
-			return 0;
+		if(N>=1 && N<10)
+			result=0;
 		else {
-			return n;
+			for(int i=10; i<N; i++) {
+				sum=0;
+				String s = Integer.toString(i);
+				sum=sum+i;
+				for(int j=0; j<s.length();j++) {
+					sum+=((int)s.charAt(j)-48);
+				}
+				
+				if(sum==N) {
+					result=i;
+					break;
+				}
+			}
 		}
+		
+		System.out.println(result);
+	
 	}
 }
