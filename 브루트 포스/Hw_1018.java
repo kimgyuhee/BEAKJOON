@@ -3,9 +3,9 @@ package beakjoon13;
 import java.util.Scanner;
 public class Hw_1018 {
 	
-	private static char[][] trans; // 8x8ÀÇ Ã¼½ºÆÇÀ» ¶â¾î ³» ÀúÀåÇÏ´Â Ã¼½ºÆÇ º¯¼öÀÌ´Ù.
-	private static char[][] arr; // nxmÀÇ º¸µå¸¦ ÀúÀåÇÒ º¯¼öÀÌ´Ù.
-	static final char[][] white= { //(0,0)ÀÌ WÀÏ ¶§ °¡Áú ¼ö ÀÖ´Â ±ÔÄ¢ÀÌ´Ù.
+	private static char[][] trans; // 8x8ì˜ ì²´ìŠ¤íŒì„ ëœ¯ì–´ ë‚´ ì €ì¥í•˜ëŠ” ì²´ìŠ¤íŒ ë³€ìˆ˜ì´ë‹¤.
+	private static char[][] arr; // nxmì˜ ë³´ë“œë¥¼ ì €ì¥í•  ë³€ìˆ˜ì´ë‹¤.
+	static final char[][] white= { //(0,0)ì´ Wì¼ ë•Œ ê°€ì§ˆ ìˆ˜ ìˆëŠ” ê·œì¹™ì´ë‹¤.
 			{'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'}, 
 			{'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}, 
 			{'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'}, 
@@ -16,7 +16,7 @@ public class Hw_1018 {
 			{'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'} 
 			}; 
 	
-	static final char[][] black= { // (0,0)ÀÌ BÀÏ ¶§ °¡Áú ¼ö ÀÖ´Â ±ÔÄ¢ÀÌ´Ù.
+	static final char[][] black= { // (0,0)ì´ Bì¼ ë•Œ ê°€ì§ˆ ìˆ˜ ìˆëŠ” ê·œì¹™ì´ë‹¤.
 			{'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}, 
 			{'W', 'B', 'W', 'B', 'W', 'B', 'W', 'B'}, 
 			{'B', 'W', 'B', 'W', 'B', 'W', 'B', 'W'}, 
@@ -34,19 +34,19 @@ public class Hw_1018 {
 		int k=0;
 		StringBuilder builder = new StringBuilder("");
 		for(int i=a; i<a+8; i++) {
-			builder.setLength(0); // StringBuilder ÃÊ±âÈ­, °ø¹éÀ¸·Î ¸¸µç´Ù.
+			builder.setLength(0); // StringBuilder ì´ˆê¸°í™”, ê³µë°±ìœ¼ë¡œ ë§Œë“ ë‹¤.
 			
 			for(int j=b; j<b+8; j++) {
 				builder.append(arr[i][j]);
 			}
 			
 			for(int j=0; j<builder.length(); j++) {
-				trans[k][j]=builder.charAt(j); // Çà ´ÜÀ§·Î Ã¼½ºÆÇ ¹è¿­¿¡ ÀúÀå
+				trans[k][j]=builder.charAt(j); // í–‰ ë‹¨ìœ„ë¡œ ì²´ìŠ¤íŒ ë°°ì—´ì— ì €ì¥
 			}
 			k++;
 		}
 		
-		for(int i=0; i<trans.length; i++)  { // Ã¼½ºÆÇÀ» Å½»ö
+		for(int i=0; i<trans.length; i++)  { // ì²´ìŠ¤íŒì„ íƒìƒ‰
 			for(int j=0; j<trans[i].length; j++) {
 				if(trans[i][j]!=black[i][j]) {
 					cnt_b++;
